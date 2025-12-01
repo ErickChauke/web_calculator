@@ -4,6 +4,7 @@
 import { getState, setState, resetState } from './state.js';
 import { executeOperation, toggleNumberSign, convertToPercentage } from './operations.js';
 import { updateDisplay, isValidNumber } from './display.js';
+import { updateOperationIndicator, clearOperationIndicator } from './display-helper.js';
 import { INITIAL_DISPLAY_VALUE, DECIMAL_POINT, ZERO_VALUE } from './constants.js';
 import type { OperationType } from './types.js';
 
@@ -60,6 +61,9 @@ function handleOperatorInput(operator: OperationType): void {
         operation: operator,
         shouldResetDisplay: true
     });
+    
+    const updatedState = getState();
+    updateOperationIndicator(operator, updatedState.previousValue);
 }
 
 // Handles equals button click
@@ -88,12 +92,14 @@ function handleEqualsInput(): void {
     });
     
     updateDisplay(resultString);
+    clearOperationIndicator();
 }
 
 // Handles clear button click (AC)
 function handleClear(): void {
     resetState();
     updateDisplay(INITIAL_DISPLAY_VALUE);
+    clearOperationIndicator();
 }
 
 // Handles toggle sign button click (+/-)

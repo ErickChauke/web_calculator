@@ -172,3 +172,16 @@ main {
         font-size: 1.25rem;
     }
 }
+
+/* Operation indicator styling */
+.operation-indicator {
+    background: #1a1a1a;
+    color: #ff9500;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 5px 20px 0px 20px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
