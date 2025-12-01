@@ -4,7 +4,7 @@
   "description": "A calculator application built with semantic HTML and TypeScript",
   "scripts": {
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "cp src/index.html dist/ && cp src/styles/main.css dist/",
+    "copy-assets": "cp index.html dist/ && cp src/styles/main.css dist/",
     "watch": "tsc --watch",
     "serve": "python3 -m http.server 8000 --directory dist"
   },
