@@ -33,7 +33,7 @@ npm run serve
 Then open http://localhost:8000 in your browser.
 
 ## Project Structure
-- `src/index.html` - Main HTML file with semantic elements
+- `index.html` - Main HTML file with semantic elements
 - `src/styles/main.css` - Styling for the calculator
 - `src/scripts/` - TypeScript source files
 - `dist/` - Compiled output directory
